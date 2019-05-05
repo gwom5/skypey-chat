@@ -28,6 +28,7 @@ export const state = {
  * @returns {Object} - a new user object
  */
 export function generateUser() {
+
     return {
         name: faker.name.findName(),
         email: faker.internet.email(),
