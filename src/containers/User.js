@@ -17,7 +17,6 @@ const User =({user})=>{
 }
 
 function handleUserClick({user_id}){
-    console.log(user_id);
     store.dispatch(setActiveUserId(user_id));
 }
 
