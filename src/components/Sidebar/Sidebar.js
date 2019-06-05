@@ -21,12 +21,11 @@ const CurrentUser = ({user})=>{
     return(
         <section className ="main-user-section">
             <div id ="main-user">
-                <img src={profile_pic} alt={name} className="user__pic" />
+                <img src={profile_pic} alt={name} className="user-pic" />
             </div>
             <div >
                 <input id ="main-user-section-search"></input>
             </div>
-
         </section>
     );
 }
