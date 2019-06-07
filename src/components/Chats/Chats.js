@@ -7,33 +7,41 @@ class  Chat extends Component{
     constructor(props){
         super(props);
         this.state = {
-            isHovered:false
+            isHovered:false, 
+            showChatMenu: false
         }
     
         this.messageHover = this.messageHover.bind(this);
+        this.showChatMenu = this.showChatMenu.bind(this);
     }
+
+    showChatMenu(){
+        this.setState(prevState=>({
+            showChatMenu: !prevState.showChatMenu
+        }))
+    }
+
      messageHover (){
         this.setState(prevState => ({
             isHovered: !prevState.isHovered
         })); 
         
     }
-    //wrap the span element within a div, alongside the font awesome icon. Div could be a flex item with row direction to avoid text moving
+    //wrap the span element within a div, alongside the font awesome icon. Div could be a flex item with row direction to avoid text moving 
     render(){
         const {text, is_user_msg} = this.props.message;
         const hoverClass = this.state.isHovered? "hover": "";
         if(!this.state.isHovered === true){
             return (
-
                 <span className={`Chat ${is_user_msg ? "is-user-msg" : "" } ${hoverClass}`}  onMouseEnter={this.messageHover} onMouseLeave ={this.messageHover}>{text} </span>
             );
         }
         else{
             return (
-                <span className={`Chat ${is_user_msg ? "is-user-msg" : "" } ${hoverClass}`}  onMouseEnter={this.messageHover} onMouseLeave ={this.messageHover}>
-                    {text} 
-                    <MenuIcon top = {true}/>   
-                </span>
+                    <span className={`Chat ${is_user_msg ? "is-user-msg" : "" } ${hoverClass}`}  onMouseEnter={this.messageHover} onMouseLeave ={this.messageHover}>
+                        {text} 
+                        <MenuIcon showChatMenu={this.showChatMenu}/>  
+                    </span>
             );
         }
         
@@ -41,12 +49,16 @@ class  Chat extends Component{
 }
 
 
-const MenuIcon =()=>{
+const MenuIcon =(props)=>{
+    const {showChatMenu} = props;
 
     return (
-        <FontAwesomeIcon icon ={faAngleDown} />
+        <>
+        <span className = "chat-menu-icon" onClick={showChatMenu}>
+            <FontAwesomeIcon icon ={faAngleDown} />
+        </span>  
+      </>
     );
-
 
 }
 
