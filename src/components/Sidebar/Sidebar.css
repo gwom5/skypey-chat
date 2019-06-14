@@ -12,12 +12,19 @@
 .sidebar-chats{
     overflow-y: scroll;
     padding-top:20px;
+    
 }
 
-.main-user-section{
-    /* background-color: rgba(25, 25, 27, 1); */
+/* .main-user-section{
+    
     border-bottom: 1px solid rgba(189, 189, 192, 0.2);
+    padding-bottom: 10px;
+} */
+
+
+.user-section-container{
     height: 20%;
+    border-bottom: 1px solid rgba(189, 189, 192, 0.2);
     padding-bottom: 10px;
 }
 

@@ -17,6 +17,7 @@ const Empty = ({ user }) => {
                 Search for someone to start chatting with or go to Contacts to see who
                 is available
             </p>
+            
         </div>
     );
 };

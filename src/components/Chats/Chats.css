@@ -10,7 +10,7 @@
 .Chat {
     margin: 1.5rem ;
     color: #fff;
-    padding: 1rem;
+    padding:0.5rem;
     background: linear-gradient(90deg, #1986d8, #7b9cc2);
     max-width: 100%;
     border-radius: 10px;
@@ -21,15 +21,21 @@
     margin-left: auto;
     background: #2b2c33;
     border-radius: 10px;
-    
 }
 
 .chat-menu-icon{
-    margin-left: 1rem;
-    font-size: 1.5rem;
-    margin-top: -1rem;
-    max-height: 1rem;
+    margin-left: 0.5rem;
+    font-size: 1.6rem;
+    margin-top: -0.6rem;
    
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.show{
+    visibility: visible;
 }
 
 
