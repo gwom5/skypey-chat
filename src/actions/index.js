@@ -1,4 +1,4 @@
-import { SET_ACTIVE_USER_ID, SET_TYPING_VALUE, SEND_MESSAGE, SEARCH_CONTACTS} from "../constants/action-types";
+import { SET_ACTIVE_USER_ID, SET_TYPING_VALUE, SEND_MESSAGE, SEARCH_CONTACTS, DELETE_MESSAGE} from "../constants/action-types";
 
 export const setActiveUserId = id => ({
     type: SET_ACTIVE_USER_ID,
@@ -23,4 +23,13 @@ export const sendMessage = (message, userId)=>({
 export const searchContacts = value=>({
     type: SEARCH_CONTACTS,
     payload: value
-})
+});
+
+
+export const deleteMessage = (userId, number) =>({
+    type: DELETE_MESSAGE,
+    payload:{
+        userId, 
+        number
+    }
+});

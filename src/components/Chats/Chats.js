@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import "./Chats.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown} from '@fortawesome/free-solid-svg-icons';
-
-import {
-    UncontrolledPopover,
-    PopoverHeader,
-    PopoverBody
-} from 'reactstrap';
+import PopoverComponent from '../PopoverComponent';
+import store from '../../store';
+import { deleteMessage} from "../../actions";
 
 
 class  Chat extends Component{
@@ -17,7 +14,9 @@ class  Chat extends Component{
             isHovered:false, 
             popoverOpen: false
         }
-        this.messageHover = this.messageHover.bind(this);
+
+        // this.messageHover = this.messageHover.bind(this);
+        this.handleDeleteMessage = this.handleDeleteMessage.bind(this);
         this.togglePopover = this.togglePopover.bind(this);
 
     }
@@ -29,30 +28,40 @@ class  Chat extends Component{
         })
     }
 
-
-     messageHover (){
-        this.setState({
-            isHovered: !this.state.isHovered
-        }); 
-        
+    handleDeleteMessage(){
+        store.dispatch(deleteMessage(this.props.user_id, this.props.message.number));
     }
+
+
     //wrap the span element within a div, alongside the font awesome icon. Div could be a flex item with row direction to avoid text moving 
     render(){
+        
         const {text, is_user_msg, number} = this.props.message;
         const target_key = `popover${this.props.user_id}${number}`; //target key is a unique id for each message in the entire app for easy targeting by the popover
+        
         return(
             <>
-                <span className={`Chat ${is_user_msg ? "is-user-msg" : "" } `}  onMouseEnter={this.messageHover} onMouseLeave ={this.messageHover}>
+                <span className={`Chat ${is_user_msg ? "is-user-msg" : "" } `} >
                     {text}
-                    <span id = {target_key}  className = {`${this.state.isHovered? "show": "hide" } chat-menu-icon `} >
+                    <span 
+                        id = {target_key}  
+                        className ="show chat-menu-icon" >
+                        {/* {`${this.state.isHovered? "show": "hide" } */}
                         <FontAwesomeIcon icon ={faAngleDown}  />
                     </span>  
                 </span>
-                    <UncontrolledPopover trigger ="legacy"  isOpen={this.state.popoverOpen} placement="bottom" target={target_key} toggle = {this.togglePopover}>
-                    <PopoverHeader>Legacy Trigger</PopoverHeader>
-                    <PopoverBody>
-                        Before reactstrap correctly supported click and focus, it had a hybrid which was very useful and has been brought back as trigger="legacy". One advantage of the legacy trigger is that it allows the popover text to be selected while also closing when clicking outside the triggering element and popover itself.</PopoverBody>
-                    </UncontrolledPopover>
+                <PopoverComponent
+                    trigger = "legacy"
+                    isOpen = {this.state.popoverOpen}
+                    placement = "top"
+                    target = {target_key}
+                    toggle = {this.togglePopover}
+                >
+                    <ul className = "list-group list-group-flush">
+                        <li className ="list-group-item" onClick = {this.handleDeleteMessage} >Delete Message</li>
+                        <li className ="list-group-item">Edit Message</li>
+                    </ul>
+                </PopoverComponent>
             </>
         );
     }
