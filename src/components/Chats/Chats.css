@@ -45,3 +45,14 @@
         max-width: 60%;
     }
 }
+
+#message_contaier{
+    display: flex;
+    justify-content: space-between;
+}
+
+#message_container_inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -1,5 +1,5 @@
 import {getMessages} from "../static-data";
-import { SEND_MESSAGE, DELETE_MESSAGE} from "../constants/action-types";
+import { SEND_MESSAGE, DELETE_MESSAGE, EDIT_MESSAGE} from "../constants/action-types";
 import _ from  "lodash";
 
     let {userId, message, allUserMessages, number} = "";
@@ -17,7 +17,8 @@ export default function messages(state = getMessages(10), action) {
                     [number]:{
                         number,
                         text: message,
-                        is_user_msg: true
+                        is_user_msg: true,
+                        edited: false
                     }
                 }
 
@@ -33,6 +34,22 @@ export default function messages(state = getMessages(10), action) {
                     ...allUserMessages
                 }
             }
+
+        case EDIT_MESSAGE: 
+            userId = action.payload.userId;
+            message = action.payload.message;
+            number = action.payload.messageId;
+            allUserMessages = _.cloneDeep(state[userId]);
+            allUserMessages[number].text = message;
+            allUserMessages[number].edited = true;
+
+            return{
+                ...state,
+                [userId]: {
+                    ...allUserMessages
+                }
+            }
+
         default:
             return state;
     }
