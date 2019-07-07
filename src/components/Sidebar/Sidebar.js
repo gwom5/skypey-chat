@@ -17,14 +17,11 @@ const Sidebar =({contacts, user}) =>{
     return (
         <aside className="Sidebar">
             <div className= "user-section-container"> 
-                <section className = "main-user-section">
-                    <CurrentUser user = {user} />
-                </section>
+                <CurrentUser user = {user} />
+
                 <Search value = {searching}/> 
             </div>
-
             <AllChats  contacts = {filteredContacts} />
-            
         </aside>
     );
     
@@ -35,9 +32,9 @@ const CurrentUser = ({user})=>{
     const {name, profile_pic} = user;
     return(
 
-            <div id ="main-user" >
+            <section id ="main-user" >
                 <img src={profile_pic} alt={name} className="user-pic" />
-            </div>
+            </section>
     );
 }
 
@@ -48,12 +45,14 @@ const Search = (props)=>{
     }
 
     return(
-        <input 
-            value = {props.value} 
-            id ="main-user-section-search" 
-            placeholder = "Search or start new chat" 
-            onChange = {handleChange}
-        />
+        <div>
+            <input 
+                value = {props.value} 
+                id ="main-user-search" 
+                placeholder = "Search or start new chat" 
+                onChange = {handleChange}
+            />
+        </div>
     );
 }
 

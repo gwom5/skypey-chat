@@ -103,7 +103,6 @@ class Chats extends Component {
 
 
 const MenuIcon = ({id, className}) =>{
-
     return (
         <span id = {id} className = {className}>
             <FontAwesomeIcon icon ={faAngleDown}  />

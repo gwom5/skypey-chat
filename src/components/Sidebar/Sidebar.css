@@ -1,7 +1,7 @@
 
 .Sidebar{
     display: flex;
-    width:80px;
+    width:25%;
     flex-direction: column;
     height: 100vh;
     background-color: rgba(25, 25, 27, 1);
@@ -9,60 +9,54 @@
     border-right: 1px solid rgba(189, 189, 192, 0.1);
 }
 
-.sidebar-chats{
-    overflow-y: scroll;
-    padding-top:20px;
-    
-}
-
-/* .main-user-section{
-    
-    border-bottom: 1px solid rgba(189, 189, 192, 0.2);
-    padding-bottom: 10px;
-} */
-
-
 .user-section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 20%;
-    border-bottom: 1px solid rgba(189, 189, 192, 0.2);
-    padding-bottom: 10px;
+    padding: 0.5em;
 }
 
-#main-user-section-search{
-    height: 10px;
-    width: 80%;
+#main-user{
+    padding: 0.5rem;
+}
+
+.user-pic {
+    width: 3em;
+    border-radius:50%; 
+}
+
+#main-user-search{
+    align-self: center;
+    height: 2em;
+    width: 90%;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     border: 0;
     border-radius: 10px;
     font-size: 1rem;
-    outline: 0;
+    outline-color: beige;
 }
 
-#main-user{
-    display: flex;
-    align-items: flex-start;
-    padding: 1rem;
+.sidebar-chats{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: 1px solid rgba(189, 189, 192, 0.2);
+    overflow-y: scroll;
+    padding-top:2em;
 }
 
-.user-pic {
-    width: 40px;
-    border-radius:50%; 
-}
 
 .user-pic:hover {
-    background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
-.User__details {
-    display: none;
-}
 
 /* not small devices  */
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
     .Sidebar {
         width: 320px;
     }
-}
+} */
