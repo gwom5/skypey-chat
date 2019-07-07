@@ -16,3 +16,17 @@
     height: auto;
     font-weight: lighter;
 }
+
+@media screen and (max-width: 400px){
+    .Header{
+        padding: 0.5em;
+    }
+    .Header__name{
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    .Header_status{
+        font-size: 0.5rem;
+    }
+}
