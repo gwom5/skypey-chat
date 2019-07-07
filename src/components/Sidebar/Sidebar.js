@@ -18,7 +18,6 @@ const Sidebar =({contacts, user}) =>{
         <aside className="Sidebar">
             <div className= "user-section-container"> 
                 <CurrentUser user = {user} />
-
                 <Search value = {searching}/> 
             </div>
             <AllChats  contacts = {filteredContacts} />
