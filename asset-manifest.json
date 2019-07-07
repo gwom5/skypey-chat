@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/skypey-chat/static/css/main.a2032624.chunk.css",
+    "main.js": "/skypey-chat/static/js/main.ddf11677.chunk.js",
+    "main.js.map": "/skypey-chat/static/js/main.ddf11677.chunk.js.map",
+    "runtime~main.js": "/skypey-chat/static/js/runtime~main.f6736c11.js",
+    "runtime~main.js.map": "/skypey-chat/static/js/runtime~main.f6736c11.js.map",
+    "static/css/2.266e55a5.chunk.css": "/skypey-chat/static/css/2.266e55a5.chunk.css",
+    "static/js/2.7d4fea10.chunk.js": "/skypey-chat/static/js/2.7d4fea10.chunk.js",
+    "static/js/2.7d4fea10.chunk.js.map": "/skypey-chat/static/js/2.7d4fea10.chunk.js.map",
+    "index.html": "/skypey-chat/index.html",
+    "precache-manifest.6e207116a17ea91bc37631468176e219.js": "/skypey-chat/precache-manifest.6e207116a17ea91bc37631468176e219.js",
+    "service-worker.js": "/skypey-chat/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/skypey-chat/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.a2032624.chunk.css.map": "/skypey-chat/static/css/main.a2032624.chunk.css.map"
+  }
+}
