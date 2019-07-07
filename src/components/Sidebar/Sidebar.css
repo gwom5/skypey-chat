@@ -42,7 +42,6 @@
 .sidebar-chats{
     display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
     border-top: 1px solid rgba(189, 189, 192, 0.2);
     overflow-y: scroll;
     padding-top:2em;

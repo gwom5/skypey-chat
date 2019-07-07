@@ -19,13 +19,13 @@
 }
 .Empty__img {
     border-radius: 50%;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 .Empty__btn {
-    padding: 1rem;
+    padding: 0.8rem;
     margin: 1rem 0;
     font-weight: lighter;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 20px;
 }
 .Empty__btn:hover {
