@@ -7,6 +7,7 @@
 }
 .Empty__name {
     color: #fff;
+    font-weight: lighter;
 }
 .Empty__status,
 .Empty__info {
@@ -23,10 +24,9 @@
 .Empty__btn {
     padding: 1rem;
     margin: 1rem 0;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 30px;
-    outline: 0;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    border-radius: 20px;
 }
 .Empty__btn:hover {
     background: rgba(255, 255, 255, 0.7);
