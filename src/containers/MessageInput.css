@@ -12,3 +12,11 @@
     font-size: 1rem;
     outline: 0;
 }
+
+@media screen and (max-width: 400px){
+    .Message__input{
+        width: 80%;
+        align-self: center;
+        font-size: 0.8rem;
+    }
+}

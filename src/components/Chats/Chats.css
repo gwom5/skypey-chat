@@ -7,16 +7,25 @@
     margin: 0 auto;
     overflow-y: scroll;
 }
+
+
 .Chat {
     margin: 1.5rem ;
+    font-weight: lighter;
     color: #fff;
     padding:0.5rem;
     background: linear-gradient(90deg, #1986d8, #7b9cc2);
     max-width: 100%;
     border-radius: 10px;
     display: flex;
-   
 }
+
+@media screen and (max-width: 400px){
+    .Chat{
+        font-size: 0.8rem;
+    }
+}
+
 .Chat.is-user-msg {
     margin-left: auto;
     background: #2b2c33;
@@ -25,22 +34,16 @@
 
 .chat-menu-icon{
     margin-left: 0.5rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-top: -0.6rem;
-   
 }
 
 .hide{
     visibility: hidden;
 }
 
-.show{
-    visibility: visible;
-}
 
-
-
-@media (min-width: 576px) {
+@media (min-width: 400px) {
     .Chat {
         max-width: 60%;
     }
